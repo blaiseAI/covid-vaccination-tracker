@@ -9,7 +9,7 @@ export default function Home({ summary }) {
       <Head>
         <title> Covid-19 | Vaccination Tracker </title> <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Header someProp='foo' />
+      <Header someProp={summary} />
       <main>
         <h1>Hello {summary.last_updated}</h1>
       </main>

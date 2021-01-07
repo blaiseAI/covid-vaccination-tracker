@@ -3,15 +3,15 @@ import styles from '../styles/Home.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
 import Header from './header';
-export default function Home({ summary }) {
+export default function Home({ data }) {
   return (
     <div className='container-fluid'>
       <Head>
         <title> Covid-19 | Vaccination Tracker </title> <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Header someProp={summary} />
+      <Header someProp={data} />
       <main>
-        <h1>Hello {summary.last_updated}</h1>
+        <h1>Hello {data.last_updated}</h1>
       </main>
       <footer className={styles.footer}>
         <a
@@ -27,9 +27,9 @@ export default function Home({ summary }) {
 }
 export async function getServerSideProps({ params }) {
   const req = await fetch(`https://api.covid19tracker.ca/summary`);
-  const data = await req.json();
+  const jsonData = await req.json();
 
   return {
-    props: { summary: data },
+    props: { data: jsonData },
   };
 }

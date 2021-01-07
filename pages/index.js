@@ -2,12 +2,14 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
+import Header from './header';
 export default function Home({ summary }) {
   return (
     <div className='container-fluid'>
       <Head>
         <title> Covid-19 | Vaccination Tracker </title> <link rel='icon' href='/favicon.ico' />
       </Head>
+      <Header someProp='foo' />
       <main>
         <h1>Hello {summary.last_updated}</h1>
       </main>

@@ -12,7 +12,7 @@ These steps will get this sample application running for you using DigitalOcean.
 
 Click this button to deploy the app to the DigitalOcean App Platform.
 
-[![Deploy to DO](https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/blaiseAI/covid19-vaccination-tracker/tree/main)
+[![Deploy to DO](https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/blaiseAI/covid-vaccination-tracker/tree/main)
 
 ## Making Changes to Your App
 

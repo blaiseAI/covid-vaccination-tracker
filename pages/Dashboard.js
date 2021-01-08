@@ -1,8 +1,11 @@
 import { Statistic, Card, Row, Col } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 const Dashboard = ({ summaryData }) => {
-  const totalDeliveredPercentage = (summaryData.total_vaccinations * 100) / summaryData.total_vaccines_distributed;
-  const populationPercentageVaccinated = (summaryData.total_vaccinations * 100) / 37894799;
+  const totalVaccination = summaryData ? summaryData.total_vaccinations : 0;
+  const totalDistributed = summaryData ? summaryData.total_vaccines_distributed : 0;
+
+  const totalDeliveredPercentage = (totalVaccination * 100) / totalDistributed;
+  const populationPercentageVaccinated = (totalVaccination * 100) / 37894799;
   return (
     <div>
       <div className='site-statistic-demo-card mt-4'>

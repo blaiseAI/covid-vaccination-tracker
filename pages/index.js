@@ -3,16 +3,22 @@ import styles from '../styles/Home.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
 import Header from './header';
+import Dashboard from './Dashboard';
 export default function Home({ data }) {
+  const dataNumbers = [...data.data];
   return (
     <div className='container-fluid'>
       <Head>
-        <title> Covid-19 | Vaccination Tracker </title> <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <Header someProp={data} />
+        <title> Covid - 19 | Vaccination Tracker </title> <link rel='icon' href='/favicon.ico ' />{' '}
+      </Head>{' '}
+      <Header someProp={data} />{' '}
       <main>
-        <h1>Hello {data.last_updated}</h1>
-      </main>
+        {/* {console.log(dataNumbers)} */}
+        {/* <Dashboard summaryData={data} /> */}
+        {dataNumbers.map((summary, index) => (
+          <Dashboard summaryData={summary} key={index} />
+        ))}
+      </main>{' '}
       <footer className={styles.footer}>
         <a
           href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'

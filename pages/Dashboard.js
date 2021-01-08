@@ -1,6 +1,8 @@
 import { Statistic, Card, Row, Col } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 const Dashboard = ({ summaryData }) => {
+  const totalDeliveredPercentage = (summaryData.total_vaccinations * 100) / summaryData.total_vaccines_distributed;
+  const populationPercentageVaccinated = (summaryData.total_vaccinations * 100) / 37894799;
   return (
     <div>
       <div className='site-statistic-demo-card mt-4'>
@@ -37,11 +39,7 @@ const Dashboard = ({ summaryData }) => {
               />
               <Statistic
                 title=''
-                value={`${
-                  (summaryData ? summaryData.total_vaccinations : 0 * 100) / summaryData
-                    ? summaryData.total_vaccines_distributed
-                    : 0
-                }`}
+                value={`${summaryData ? totalDeliveredPercentage : 0}`}
                 precision={2}
                 valueStyle={{ color: '#3f8600', fontSize: '12px' }}
                 prefix={<ArrowDownOutlined />}
@@ -53,13 +51,7 @@ const Dashboard = ({ summaryData }) => {
             <Card>
               <Statistic
                 title={`Population percentage`}
-                value={`${
-                  summaryData
-                    ? summaryData.total_vaccinations
-                    : 0 / summaryData
-                    ? summaryData.total_vaccines_distributed
-                    : 0
-                }`}
+                value={`${summaryData ? populationPercentageVaccinated : 0}`}
                 precision={2}
                 valueStyle={{ color: '#3f8600' }}
                 prefix={false}
@@ -67,13 +59,7 @@ const Dashboard = ({ summaryData }) => {
               />
               <Statistic
                 title=''
-                value={`${
-                  summaryData
-                    ? summaryData.total_vaccinations
-                    : 0 / summaryData
-                    ? summaryData.total_vaccines_distributed
-                    : 0
-                }`}
+                value={`${summaryData ? populationPercentageVaccinated : 0}`}
                 precision={2}
                 valueStyle={{ color: '#3f8600', fontSize: '12px' }}
                 prefix={<ArrowDownOutlined />}

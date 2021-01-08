@@ -9,7 +9,7 @@ const Dashboard = ({ summaryData }) => {
             <Card>
               <Statistic
                 title={`Administered doses`}
-                value={summaryData.total_vaccinations}
+                value={summaryData ? summaryData.total_vaccinations : 0}
                 precision={0}
                 valueStyle={{ color: '#3f8600' }}
                 prefix={false}
@@ -17,7 +17,7 @@ const Dashboard = ({ summaryData }) => {
               />
               <Statistic
                 title={``}
-                value={summaryData.change_vaccinations}
+                value={summaryData ? summaryData.change_vaccinations : 0}
                 precision={0}
                 valueStyle={{ color: '#3f8600', fontSize: '12px' }}
                 prefix={<ArrowUpOutlined />}
@@ -29,7 +29,7 @@ const Dashboard = ({ summaryData }) => {
             <Card>
               <Statistic
                 title={`Delivered doses`}
-                value={summaryData.total_vaccines_distributed}
+                value={summaryData ? summaryData.total_vaccines_distributed : 0}
                 precision={0}
                 valueStyle={{ color: '#3f8600' }}
                 prefix={false}
@@ -37,7 +37,11 @@ const Dashboard = ({ summaryData }) => {
               />
               <Statistic
                 title=''
-                value={`${(summaryData.total_vaccinations * 100) / summaryData.total_vaccines_distributed}`}
+                value={`${
+                  (summaryData ? summaryData.total_vaccinations : 0 * 100) / summaryData
+                    ? summaryData.total_vaccines_distributed
+                    : 0
+                }`}
                 precision={2}
                 valueStyle={{ color: '#3f8600', fontSize: '12px' }}
                 prefix={<ArrowDownOutlined />}
@@ -49,7 +53,13 @@ const Dashboard = ({ summaryData }) => {
             <Card>
               <Statistic
                 title={`Population percentage`}
-                value={`${summaryData.total_vaccinations / summaryData.total_vaccines_distributed}`}
+                value={`${
+                  summaryData
+                    ? summaryData.total_vaccinations
+                    : 0 / summaryData
+                    ? summaryData.total_vaccines_distributed
+                    : 0
+                }`}
                 precision={2}
                 valueStyle={{ color: '#3f8600' }}
                 prefix={false}
@@ -57,7 +67,13 @@ const Dashboard = ({ summaryData }) => {
               />
               <Statistic
                 title=''
-                value={`${summaryData.total_vaccinations / summaryData.total_vaccines_distributed}`}
+                value={`${
+                  summaryData
+                    ? summaryData.total_vaccinations
+                    : 0 / summaryData
+                    ? summaryData.total_vaccines_distributed
+                    : 0
+                }`}
                 precision={2}
                 valueStyle={{ color: '#3f8600', fontSize: '12px' }}
                 prefix={<ArrowDownOutlined />}

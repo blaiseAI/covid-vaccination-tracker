@@ -16,7 +16,7 @@ export default function Home({ data }) {
         {/* {console.log(dataNumbers)} */}
         {/* <Dashboard summaryData={data} /> */}
         {dataNumbers.map((summary, index) => (
-          <Dashboard summaryData={summary} key={index} />
+          <Dashboard summaryData={summary} data={data} key={index} />
         ))}
       </main>{' '}
       <footer className={styles.footer}>
@@ -31,7 +31,7 @@ export default function Home({ data }) {
     </div>
   );
 }
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps() {
   const req = await fetch(`https://api.covid19tracker.ca/summary`);
   const jsonData = await req.json();
 

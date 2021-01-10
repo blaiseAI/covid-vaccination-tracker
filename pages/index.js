@@ -21,13 +21,13 @@ export default function Home({ data, provinceData }) {
         {dataNumbers.map((summary, index) => (
           <Dashboard summaryData={summary} data={data} key={index} />
         ))}
-        <Row gutter={16} className=''>
+        {/* <Row gutter={16} className=''>
           <Col span={24} xs={24} sm={24} lg={24} className='mb-4'>
             <Card title='Doses By Province' bordered={true} extra={<TableOutlined />}>
               <Provinces provinceData={provinceData} />
             </Card>
           </Col>
-        </Row>
+        </Row> */}
       </main>{' '}
       <footer className={styles.footer}>
         <a

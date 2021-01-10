@@ -45,6 +45,8 @@ This will delete the app and destroy any underlying DigitalOcean resources
 
 ## Issues / Troubleshooting
 
+[Issue Ticket](https://github.com/blaiseAI/covid-vaccination-tracker/issues)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/) License.

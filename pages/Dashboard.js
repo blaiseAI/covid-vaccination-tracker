@@ -117,12 +117,8 @@ const Dashboard = ({ summaryData, data, provinceData }) => {
                 Data source{' '}
               </Divider>{' '}
               <p>
-                Find all of the data tracked(including cases, fatalities, hospitalizations, criticals, testing and
-                recoveries){' '}
-                <a href='https://api.covid19tracker.ca/docs/1.0/overview' target='_blank' rel='noopener noreferrer'>
-                  here{' '}
-                </a>
-                .{' '}
+                Near real-time COVID-19 data updates for every region in Canada, tracking cases, deaths, vaccinations,
+                hospitalizations, ICU, recoveries and testing.
               </p>{' '}
             </Card>{' '}
           </Col>{' '}

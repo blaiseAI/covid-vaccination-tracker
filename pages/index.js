@@ -3,6 +3,8 @@ import styles from '../styles/Home.module.css';
 import { Statistic, Card, Row, Col, Divider, Tooltip } from 'antd';
 import { Navbar, Nav } from 'react-bootstrap';
 import Link from 'next/link';
+// import 'node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+
 import { ArrowUpOutlined, ArrowDownOutlined, ExclamationCircleTwoTone, TableOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import Header from './header';

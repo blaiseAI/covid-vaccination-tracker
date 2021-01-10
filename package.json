@@ -12,6 +12,7 @@
         "next": "10.0.5",
         "react": "17.0.1",
         "react-bootstrap": "^1.4.0",
+        "react-bootstrap-table": "^4.3.1",
         "react-dom": "17.0.1",
         "react-table": "^7.6.2"
     },

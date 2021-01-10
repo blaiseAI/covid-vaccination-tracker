@@ -11,6 +11,10 @@ import Header from './header';
 import Dashboard from './Dashboard';
 import Provinces from './Provinces';
 export default function Home({ data, provinceData }) {
+  const WhiteLink = styled.a`
+    color: white;
+    font-size: 1.5rem;
+  `;
   const dataNumbers = [...data.data];
   return (
     <div>
@@ -23,7 +27,7 @@ export default function Home({ data, provinceData }) {
       </Head>{' '}
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Link href='/' className='navbar-brand'>
-          COVID-19 Vaccine Tracker | Canada
+          <WhiteLink>COVID-19 Vaccine Tracker | Canada</WhiteLink>
         </Link>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>

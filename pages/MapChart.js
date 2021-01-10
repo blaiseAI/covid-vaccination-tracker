@@ -51,7 +51,7 @@ function MapChart({ provinceData }) {
   };
   return (
     <div>
-      <h2>Bar Example (custom size)</h2>
+      <h2>Vaccination Data Visualization</h2>
       <Bar
         data={datasetValues}
         options={{

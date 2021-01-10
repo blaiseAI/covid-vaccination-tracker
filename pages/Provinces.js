@@ -36,7 +36,8 @@ function onChange(pagination, filters, sorter, extra) {
 }
 const Provinces = ({ provinceData }) => {
   console.log(provinceData);
-  return <Table columns={columns} dataSource={provinceData ? provinceData : 'No data available'} onChange={onChange} />;
+  return <h1>Table</h1>;
+  //   return <Table columns={columns} dataSource={provinceData ? provinceData : 'No data available'} onChange={onChange} />;
 };
 
 export default Provinces;

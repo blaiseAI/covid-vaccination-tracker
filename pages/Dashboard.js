@@ -8,7 +8,10 @@ import {
 } from '@ant-design/icons';
 import styles from '../styles/Home.module.css';
 import moment from 'moment';
-const Dashboard = ({ summaryData, data }) => {
+
+import MapChart from './MapChart';
+
+const Dashboard = ({ summaryData, data, provinceData }) => {
   const totalVaccination = summaryData ? summaryData.total_vaccinations : 0;
   const totalDistributed = summaryData ? summaryData.total_vaccines_distributed : 0;
   const totalDeliveredPercentage = (totalVaccination * 100) / totalDistributed;
@@ -91,44 +94,44 @@ const Dashboard = ({ summaryData, data }) => {
               }
             >
               <p>
-                As of <strong>{moment(data ? data.last_updated : '').format('dddd')}</strong> at{' '}
+                As of <strong> {moment(data ? data.last_updated : '').format('dddd')} </strong> at{' '}
                 {moment(data ? data.last_updated : '').format('hh:mm a')}, more than{' '}
-                <strong>{summaryData ? summaryData.total_vaccinations : 0}</strong> doses of approved COVID-19 vaccines
-                have been administered across Canada.
-              </p>
+                <strong> {summaryData ? summaryData.total_vaccinations : 0} </strong> doses of approved COVID-19
+                vaccines have been administered across Canada.{' '}
+              </p>{' '}
               <p>
-                In total, <strong>{summaryData ? summaryData.total_vaccines_distributed : 0}</strong> doses of COVID-19
-                vaccines (including both Moderna and Pfizer-BioNTech) have been delivered to the provinces for
-                administration. As of today, <strong>{Math.round(totalDeliveredPercentage * 100) / 100}%</strong> of
-                doses delivered to the provinces have been administered.
-              </p>
+                In total, <strong> {summaryData ? summaryData.total_vaccines_distributed : 0} </strong> doses of
+                COVID-19 vaccines(including both Moderna and Pfizer - BioNTech) have been delivered to the provinces for
+                administration.As of today, <strong> {Math.round(totalDeliveredPercentage * 100) / 100} % </strong> of
+                doses delivered to the provinces have been administered.{' '}
+              </p>{' '}
               <p>
-                The Pfizer-BioNTech and Moderna vaccines require two doses, a number of weeks apart, for full efficacy.
-                Consequently, the values we report indicate the total number of doses administered to Canadians. Until
-                early January, this value will also be equivalent to the total number of people who have received at
-                least one dose. As of today, more than{' '}
-                <strong>{summaryData ? summaryData.total_vaccinations : 0}</strong> Canadians have received at least one
-                dose of an approved COVID-19 vaccine.
-              </p>
+                The Pfizer - BioNTech and Moderna vaccines require two doses, a number of weeks apart, for full
+                efficacy.Consequently, the values we report indicate the total number of doses administered to
+                Canadians.Until early January, this value will also be equivalent to the total number of people who have
+                received at least one dose.As of today, more than{' '}
+                <strong> {summaryData ? summaryData.total_vaccinations : 0} </strong> Canadians have received at least
+                one dose of an approved COVID - 19 vaccine.{' '}
+              </p>{' '}
               <Divider orientation='left' plain>
-                Data source
-              </Divider>
+                Data source{' '}
+              </Divider>{' '}
               <p>
-                Find all of the data tracked (including cases, fatalities, hospitalizations, criticals, testing and
+                Find all of the data tracked(including cases, fatalities, hospitalizations, criticals, testing and
                 recoveries){' '}
                 <a href='https://api.covid19tracker.ca/docs/1.0/overview' target='_blank' rel='noopener noreferrer'>
-                  here
+                  here{' '}
                 </a>
-                .
-              </p>
-            </Card>
-          </Col>
+                .{' '}
+              </p>{' '}
+            </Card>{' '}
+          </Col>{' '}
           <Col span={12} xs={24} sm={24} lg={12} className='mb-4'>
             <Card title='Map' bordered={true} className={styles.scrollable}>
-              Card content
-            </Card>
-          </Col>
-        </Row>
+              <MapChart provinceData={provinceData} />
+            </Card>{' '}
+          </Col>{' '}
+        </Row>{' '}
       </div>{' '}
     </div>
   );

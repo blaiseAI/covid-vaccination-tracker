@@ -42,3 +42,13 @@ When you no longer need this sample application running live, you can delete it 
 This will delete the app and destroy any underlying DigitalOcean resources
 
 **Note: If you don't delete your app, charges for the use of DigitalOcean services will continue to accrue.**
+
+## Issues / Troubleshooting
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/) License.
+
+## Made with
+
+- Framework: Next.js

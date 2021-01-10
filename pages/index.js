@@ -40,7 +40,7 @@ export default function Home({ data, provinceData }) {
       <main className='container-fluid'>
         <Header someProp={data} />
         {dataNumbers.map((summary, index) => (
-          <Dashboard summaryData={summary} data={data} key={index} />
+          <Dashboard summaryData={summary} data={data} provinceData={provinceData} key={index} />
         ))}
         <Row gutter={16} className=''>
           <Col span={24} xs={24} sm={24} lg={24} className='mb-4'>

@@ -16,6 +16,10 @@ export default function Home({ data, provinceData }) {
     <div>
       <Head>
         <title> Covid - 19 | Vaccination Tracker </title> <link rel='icon' href='/favicon.ico ' />{' '}
+        <link
+          rel='stylesheet'
+          href='https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css'
+        ></link>
       </Head>{' '}
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Link href='/' className='navbar-brand'>

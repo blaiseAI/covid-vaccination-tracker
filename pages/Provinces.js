@@ -1,8 +1,9 @@
 import { Table } from 'antd';
 
 function onChange(pagination, filters, sorter, extra) {
-  console.log('params', pagination, filters, sorter, extra);
+  //   console.log('params', pagination, filters, sorter, extra);
 }
+
 const Provinces = ({ provinceData }) => {
   const columns = [
     {

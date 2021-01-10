@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Statistic, Card, Row, Col, Divider, Tooltip } from 'antd';
+import { Navbar, Nav } from 'react-bootstrap';
+import Link from 'next/link';
 import { ArrowUpOutlined, ArrowDownOutlined, ExclamationCircleTwoTone, TableOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import Header from './header';
@@ -10,14 +11,28 @@ import Provinces from './Provinces';
 export default function Home({ data, provinceData }) {
   const dataNumbers = [...data.data];
   return (
-    <div className='container-fluid'>
+    <div>
       <Head>
         <title> Covid - 19 | Vaccination Tracker </title> <link rel='icon' href='/favicon.ico ' />{' '}
       </Head>{' '}
-      <Header someProp={data} />{' '}
-      <main>
-        {/* {console.log(dataNumbers)} */}
-        {/* <Dashboard summaryData={data} /> */}
+      <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
+        <Link href='/' className='navbar-brand'>
+          COVID-19 Vaccine Tracker | Canada
+        </Link>
+        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+        <Navbar.Collapse id='responsive-navbar-nav'>
+          {/* <Nav className='mr-auto'>
+            <Link href='/about' className='nav-link'>
+              About
+            </Link>
+            <Link href='/sources' className='nav-link'>
+              Sources
+            </Link>
+          </Nav> */}
+        </Navbar.Collapse>
+      </Navbar>
+      <main className='container-fluid'>
+        <Header someProp={data} />
         {dataNumbers.map((summary, index) => (
           <Dashboard summaryData={summary} data={data} key={index} />
         ))}
@@ -37,7 +52,10 @@ export default function Home({ data, provinceData }) {
         >
           Powered by <img src='/vercel.svg' alt='Vercel Logo' className={styles.logo} />
         </a>
-        | Created with 💙 by <a href='https://seblaise.dev/'>Blaise Sebagabo</a>
+        | Created with 💙 by{' '}
+        <a href='https://seblaise.dev/' className='ml-1'>
+          Seblaise
+        </a>
       </footer>{' '}
     </div>
   );

@@ -35,7 +35,7 @@ const Provinces = ({ provinceData }) => {
       dataIndex: 'doseAdministered',
     },
   ];
-  console.log(provinceData);
+  //   console.log(provinceData);
   return <Table columns={columns} dataSource={provinceData ? provinceData : 'No data available'} onChange={onChange} />;
 };
 

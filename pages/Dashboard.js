@@ -1,8 +1,13 @@
 import { Statistic, Card, Row, Col, Divider, Tooltip } from 'antd';
-import { ArrowUpOutlined, ArrowDownOutlined, ExclamationCircleTwoTone, TableOutlined } from '@ant-design/icons';
+import {
+  PlusOutlined,
+  ArrowUpOutlined,
+  ArrowDownOutlined,
+  ExclamationCircleTwoTone,
+  TableOutlined,
+} from '@ant-design/icons';
 import styles from '../styles/Home.module.css';
 import moment from 'moment';
-import Provinces from './Provinces';
 const Dashboard = ({ summaryData, data }) => {
   const totalVaccination = summaryData ? summaryData.total_vaccinations : 0;
   const totalDistributed = summaryData ? summaryData.total_vaccines_distributed : 0;
@@ -27,7 +32,7 @@ const Dashboard = ({ summaryData, data }) => {
                 value={summaryData ? summaryData.change_vaccinations : 0}
                 precision={0}
                 valueStyle={{ color: '#3f8600', fontSize: '12px' }}
-                prefix={<ArrowUpOutlined />}
+                prefix={<PlusOutlined />}
                 suffix='Today'
               />
             </Card>{' '}
@@ -47,7 +52,7 @@ const Dashboard = ({ summaryData, data }) => {
                 value={`${summaryData ? totalDeliveredPercentage : 0}`}
                 precision={2}
                 valueStyle={{ color: '#3f8600', fontSize: '12px' }}
-                prefix={<ArrowDownOutlined />}
+                prefix={<ArrowUpOutlined />}
                 suffix='% of doses delivered have been administered'
               />
             </Card>{' '}
@@ -67,7 +72,7 @@ const Dashboard = ({ summaryData, data }) => {
                 value={`${summaryData ? populationPercentageVaccinated : 0}`}
                 precision={2}
                 valueStyle={{ color: '#3f8600', fontSize: '12px' }}
-                prefix={<ArrowDownOutlined />}
+                prefix={<ArrowUpOutlined />}
                 suffix='% of the Canadian population has received at least one dose'
               />
             </Card>{' '}
@@ -106,24 +111,21 @@ const Dashboard = ({ summaryData, data }) => {
                 dose of an approved COVID-19 vaccine.
               </p>
               <Divider orientation='left' plain>
-                Left Text
+                Data source
               </Divider>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare,
-                quae sunt a te dicta? Refert tamen, quo modo.
+                Find all of the data tracked (including cases, fatalities, hospitalizations, criticals, testing and
+                recoveries){' '}
+                <a href='https://api.covid19tracker.ca/docs/1.0/overview' target='_blank' rel='noopener noreferrer'>
+                  here
+                </a>
+                .
               </p>
             </Card>
           </Col>
           <Col span={12} xs={24} sm={24} lg={12} className='mb-4'>
             <Card title='Map' bordered={true} className={styles.scrollable}>
               Card content
-            </Card>
-          </Col>
-        </Row>
-        <Row gutter={16}>
-          <Col span={24} xs={24} sm={24} lg={24} className='mb-4'>
-            <Card title='Doses By Province' bordered={true} extra={<TableOutlined />}>
-              <Provinces />
             </Card>
           </Col>
         </Row>

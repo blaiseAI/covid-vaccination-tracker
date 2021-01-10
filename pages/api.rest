@@ -1,1 +1,7 @@
-https://api.covid19tracker.ca/summary
+# https://api.covid19tracker.ca/summary
+
+# Provinces
+
+https://api.covid19tracker.ca/provinces
+
+https://api.covid19tracker.ca/reports/province/ab

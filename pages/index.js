@@ -23,19 +23,10 @@ export default function Home({ data, provinceData }) {
       </Head>{' '}
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Link href='/' className='navbar-brand'>
-          COVID-19 Vaccine Tracker | Canada
+          <h4 className='text-white'>COVID-19 Vaccine Tracker | Canada</h4>
         </Link>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-        <Navbar.Collapse id='responsive-navbar-nav'>
-          {/* <Nav className='mr-auto'>
-            <Link href='/about' className='nav-link'>
-              About
-            </Link>
-            <Link href='/sources' className='nav-link'>
-              Sources
-            </Link>
-          </Nav> */}
-        </Navbar.Collapse>
+        <Navbar.Collapse id='responsive-navbar-nav'></Navbar.Collapse>
       </Navbar>
       <main className='container-fluid'>
         <Header someProp={data} />
